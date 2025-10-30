@@ -1,19 +1,40 @@
-# decide to remember how do calculator on py without math library
-x = int(input())
+lang_ch = input(print("Your language is RUS or ENG (write it as in the question)"))
 
-if x > 999:
-    if x % 7 == 0 or x % 17 == 0:
-        print("YES")
-    else:
-        print("NO")
-a = 17 // (23 % 7)
-b = 34 % a * 5 - 29 % 4 * 3
-print(34 % 8 * 5 - 29 % 4 * 3)
+if lang_ch == "RUS":
+
+    RUside1 = int(input(print("Введите 1 сторону прямоугольника")))
+    RUside2 = int(input(print("Введите 2 сторону прямоугольника")))
+    RUhigh = int(input(print("Введите высоту прямоугольника")))
+
+    RUsquare = RUside1 * RUside2
+    RUperimeter = 2 * (RUside1 + RUside2)
+    RUvolume = RUside1 * RUside2 * RUhigh
+
+    print(
+        "Площадь прямоугольника:",
+        RUsquare,
+        "\nПериметр прямоугольника:",
+        RUperimeter,
+        "\nОбъем прямоугольника",
+        RUvolume,
+    )
 
 
+elif lang_ch == "ENG":
 
-#print(2 // 5)
-#name = input(print("Введите своея имя"))
-#print("Ваше имя:", name, end = ' ')
+    ENGside1 = int(input(print("Enter 1 side of the rectangle")))
+    ENGside2 = int(input(print("Enter 2 side of the rectangle")))
+    ENGhigh = int(input(print("Enter the height of the rectangle")))
 
-#print('aa', 'bb', 'cc', sep = '\n')
+    ENGsquare = ENGside1 * ENGside2
+    ENGperimeter = 2 * (ENGside1 + ENGside2)
+    ENGvolume = ENGside1 * ENGside2 * ENGhigh
+
+    print(
+        "Rectangle area:",
+        ENGsquare,
+        "\nRectangle perimeter:",
+        ENGperimeter,
+        "\nRectangle volume",
+        ENGvolume,
+    )
