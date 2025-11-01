@@ -69,7 +69,7 @@ elif lang_ch == "ENG" or lang_ch == "eng":
         ENG_circleLength = pi * ENG_circlegleDiameter
 
         print(
-            "Площадь круга:", ENG_circleSquare, "\nДлина окуржности:", ENG_circleLength
+            "Square circle:", ENG_circleSquare, "\ncircumference length:", ENG_circleLength
         )
     else:
         print("Sorry, this figure is temporarily unsupported!")
