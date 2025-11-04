@@ -146,6 +146,7 @@ if lang_ch == "RUS" or lang_ch == "rus" or lang_ch == "РУС" or lang_ch == "р
                 )
 
         elif triangleUnknown_count == 1:
+            
             if triangleA == "-":
                 triangleB = float(triangleB)
                 triangleC = float(triangleC)
@@ -545,3 +546,4 @@ else:
         "Простите, этот язык не поддерживается",
         sep="",
     )
+
