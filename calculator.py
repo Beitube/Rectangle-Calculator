@@ -5,7 +5,7 @@ lang_ch = input(print("Your language is RUS or ENG (write it as in the question)
 if lang_ch == "RUS" or lang_ch == "rus" or lang_ch == "РУС" or lang_ch == "рус":
 
     shape_ch = input(
-        print("Выберите фигуру:(Круг, Прямоугольник, Квадрат, Треугольник)")
+        print("Выберите фигуру:(Круг, Прямоугольник, Квадрат, Треугольник, Ромб)")
     )
 
     if shape_ch == "Прямоугольник" or shape_ch == "прямоугольник":
@@ -51,6 +51,24 @@ if lang_ch == "RUS" or lang_ch == "rus" or lang_ch == "РУС" or lang_ch == "р
             "\nДлина диагонали",
             squareDiagonal,
         )
+
+    elif shape_ch in ("Ромб, ромб"):
+        rhombSide1 = float(input(print("Введите 1 диагональ ромба")))
+        rhombSide2 = float(input(print("Введите 2 диагональ ромба")))
+
+        rhombSquare = (rhombSide1 * rhombSide2) / 2
+        rhombSide = sqrt(pow(rhombSide1 / 2, 2) + pow(rhombSide2 / 2, 2))
+        rhombHigh = rhombSquare / rhombSide
+
+        print(
+            "Площадь ромба:",
+            rhombSquare,
+            "\nВысота ромба:",
+            rhombHigh,
+            "\nСторона ромба",
+            rhombSide,
+        )
+
     elif shape_ch == "Треугольник" or shape_ch == "треугольник":
         triangleA = input(
             print(
@@ -146,114 +164,152 @@ if lang_ch == "RUS" or lang_ch == "rus" or lang_ch == "РУС" or lang_ch == "р
                 )
 
         elif triangleUnknown_count == 1:
-            
             if triangleA == "-":
                 triangleB = float(triangleB)
                 triangleC = float(triangleC)
-           
-                triangleAngleA = input(print('Введите угол между 2 известными вам сторонами(если угол вам неизвестен введите "-" без кавычек) ')) 
-                triangleAngleB = input(print('Введите угол напротив одной известной вам стороны(если угол вам неизвестен введите "-" без кавычек) '))  
+
+                triangleAngleA = input(
+                    print(
+                        'Введите угол между 2 известными вам сторонами(если угол вам неизвестен введите "-" без кавычек) '
+                    )
+                )
+                triangleAngleB = input(
+                    print(
+                        'Введите угол напротив одной известной вам стороны(если угол вам неизвестен введите "-" без кавычек) '
+                    )
+                )
 
                 if triangleAngleA != "-":
                     triangleAngleA = float(triangleAngleA)
                     triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+
                     print(
-                    "Площадь треугольника:",
-                    triangleSquare,
+                        "Площадь треугольника:",
+                        triangleSquare,
                     )
                 elif triangleAngleB != "-":
-                    SINtriangleAngleA = (triangleB  * sin(triangleAngleB)) / triangleC
+                    SINtriangleAngleA = (triangleB * sin(triangleAngleB)) / triangleC
 
                     if SINtriangleAngleA > 1:
-                        print("Треугольника не существует!")   
+                        print("Треугольника не существует!")
                     elif SINtriangleAngleA == 1:
-                        triangleAngleA = float(triangleAngleA) 
-                        triangleAngleA = 90 # прямоугольный треугольник
+                        triangleAngleA = float(triangleAngleA)
+                        triangleAngleA = 90  # прямоугольный треугольник
 
-                        triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+                        triangleSquare = (
+                            0.5 * triangleB * triangleC * sin(triangleAngleA)
+                        )
+
                         print(
                             "Площадь треугольника:",
                             triangleSquare,
                         )
-                    elif  SINtriangleAngleA < 1:
+                    elif SINtriangleAngleA < 1:
                         print("Временно не поддерживается")
 
             elif triangleB == "-":
-                float(sideA) = triangleA
-                float(sideB) = triangleC
+                triangleA = float(triangleA)
+                triangleC = float(triangleC)
 
-                triangleAngleA = input(print('Введите угол между 2 известными вам сторонами(если угол вам неизвестен введите "-" без кавычек) ')) 
-                triangleAngleB = input(print('Введите угол напротив одной известной вам стороны(если угол вам неизвестен введите "-" без кавычек) '))  
+                triangleAngleA = input(
+                    print(
+                        'Введите угол между 2 известными вам сторонами(если угол вам неизвестен введите "-" без кавычек) '
+                    )
+                )
+                triangleAngleB = input(
+                    print(
+                        'Введите угол напротив одной известной вам стороны(если угол вам неизвестен введите "-" без кавычек) '
+                    )
+                )
 
                 if triangleAngleA != "-":
                     triangleAngleA = float(triangleAngleA)
                     triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+
                     print(
-                    "Площадь треугольника:",
-                    triangleSquare,
+                        "Площадь треугольника:",
+                        triangleSquare,
                     )
                 elif triangleAngleB != "-":
-                    SINtriangleAngleA = (triangleB  * sin(triangleAngleB)) / triangleC
+                    SINtriangleAngleA = (triangleB * sin(triangleAngleB)) / triangleC
 
                     if SINtriangleAngleA > 1:
-                        print("Треугольника не существует!")   
+                        print("Треугольника не существует!")
                     elif SINtriangleAngleA == 1:
-                        triangleAngleA = float(triangleAngleA) 
-                        triangleAngleA = 90 # прямоугольный треугольник
+                        triangleAngleA = float(triangleAngleA)
+                        triangleAngleA = 90  # прямоугольный треугольник
 
-                        triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+                        triangleSquare = (
+                            0.5 * triangleB * triangleC * sin(triangleAngleA)
+                        )
+
                         print(
                             "Площадь треугольника:",
                             triangleSquare,
                         )
-                    elif  SINtriangleAngleA < 1:
+                    elif SINtriangleAngleA < 1:
                         print("Временно не поддерживается")
             elif triangleC == "-":
-                float(sideA) = triangleA
-                float(sideB) = triangleB   
+                triangleA == float(triangleA)
+                triangleB == float(triangleB)
 
-                triangleAngleA = input(print('Введите угол между 2 известными вам сторонами(если угол вам неизвестен введите "-" без кавычек) ')) 
-                triangleAngleB = input(print('Введите угол напротив одной известной вам стороны(если угол вам неизвестен введите "-" без кавычек) '))  
+                triangleAngleA = input(
+                    print(
+                        'Введите угол между 2 известными вам сторонами(если угол вам неизвестен введите "-" без кавычек) '
+                    )
+                )
+                triangleAngleB = input(
+                    print(
+                        'Введите угол напротив одной известной вам стороны(если угол вам неизвестен введите "-" без кавычек) '
+                    )
+                )
 
                 if triangleAngleA != "-":
                     triangleAngleA = float(triangleAngleA)
                     triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+
                     print(
-                    "Площадь треугольника:",
-                    triangleSquare,
+                        "Площадь треугольника:",
+                        triangleSquare,
                     )
                 elif triangleAngleB != "-":
-                    SINtriangleAngleA = (triangleB  * sin(triangleAngleB)) / triangleC
+                    SINtriangleAngleA = (triangleB * sin(triangleAngleB)) / triangleC
 
                     if SINtriangleAngleA > 1:
-                        print("Треугольника не существует!")   
+                        print("Треугольника не существует!")
                     elif SINtriangleAngleA == 1:
-                        triangleAngleA = float(triangleAngleA) 
-                        triangleAngleA = 90 # прямоугольный треугольник
+                        triangleAngleA = float(triangleAngleA)
+                        triangleAngleA = 90  # прямоугольный треугольник
 
-                        triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+                        triangleSquare = (
+                            0.5 * triangleB * triangleC * sin(triangleAngleA)
+                        )
+
                         print(
                             "Площадь треугольника:",
                             triangleSquare,
                         )
-                    elif  SINtriangleAngleA < 1:
+                    elif SINtriangleAngleA < 1:
 
-                        triangleAngleA1 = degrees(asin(SINtriangleAngleA))  
-                        triangleAngleA2 = 180 - triangleAngleA1  
+                        triangleAngleA1 = degrees(asin(SINtriangleAngleA))
+                        triangleAngleA2 = 180 - triangleAngleA1
 
                         triangleAngleC1 = 180 - triangleAngleA1 - triangleAngleB
                         triangleAngleC2 = 180 - triangleAngleA2 - triangleAngleB
 
-                        triangleSquare1 = 0.5 * triangleB * triangleC * sin(radians(triangleAngleC1))
-                        triangleSquare2 = 0.5 * triangleB * triangleC * sin(radians(triangleAngleC2))
+                        triangleSquare1 = (
+                            0.5 * triangleB * triangleC * sin(radians(triangleAngleC1))
+                        )
+                        triangleSquare2 = (
+                            0.5 * triangleB * triangleC * sin(radians(triangleAngleC2))
+                        )
 
-                        print("Площадь для острого угла:", triangleSquare1, "\nПлощадь тупого угла:", triangleSquare2)
+                        print(
+                            "Площадь для острого угла:",
+                            triangleSquare1,
+                            "\nПлощадь тупого угла:",
+                            triangleSquare2,
+                        )
         else:
             print("Простите, но для подсчета недостаточно данных")
     else:
@@ -311,7 +367,7 @@ elif lang_ch == "ENG" or lang_ch == "eng":
             "\nSquare diagonale",
             squareDiagonal,
         )
-        
+
     elif shape_ch == "Triangle" or shape_ch == "triangle":
         triangleA = input(
             print(
@@ -408,133 +464,188 @@ elif lang_ch == "ENG" or lang_ch == "eng":
 
         elif triangleUnknown_count == 1:
             if triangleA == "-":
-                triangleB = float(triangleB)
-                triangleC = float(triangleC)
-           
-                triangleAngleA = input(print('Enter the angle between 2 sides that you know (if you dont know the angle, enter "-" without quotes)')) 
-                triangleAngleB = input(print('Enter the angle opposite the side you know (if you dont know the angle, enter "-" without quotes)'))  
+                triangleB == float(triangleB)
+                triangleC == float(triangleC)
+
+                triangleAngleA = input(
+                    print(
+                        'Enter the angle between 2 sides that you know (if you dont know the angle, enter "-" without quotes)'
+                    )
+                )
+                triangleAngleB = input(
+                    print(
+                        'Enter the angle opposite the side you know (if you dont know the angle, enter "-" without quotes)'
+                    )
+                )
 
                 if triangleAngleA != "-":
                     triangleAngleA = float(triangleAngleA)
                     triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+
                     print(
-                    "Triangle square:",
-                    triangleSquare,
+                        "Triangle square:",
+                        triangleSquare,
                     )
                 elif triangleAngleB != "-":
-                    SINtriangleAngleA = (triangleB  * sin(triangleAngleB)) / triangleC
+                    SINtriangleAngleA = (triangleB * sin(triangleAngleB)) / triangleC
 
                     if SINtriangleAngleA > 1:
-                        print("The triangle does not exist!")   
+                        print("The triangle does not exist!")
                     elif SINtriangleAngleA == 1:
-                        triangleAngleA = float(triangleAngleA) 
-                        triangleAngleA = 90 # прямоугольный треугольник
+                        triangleAngleA = float(triangleAngleA)
+                        triangleAngleA = 90  # прямоугольный треугольник
 
-                        triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+                        triangleSquare = (
+                            0.5 * triangleB * triangleC * sin(triangleAngleA)
+                        )
+
                         print(
                             "Triangle square:",
                             triangleSquare,
                         )
-                    elif  SINtriangleAngleA < 1:
-                        triangleAngleA1 = degrees(asin(SINtriangleAngleA))  
-                        triangleAngleA2 = 180 - triangleAngleA1  
+                    elif SINtriangleAngleA < 1:
+                        triangleAngleA1 = degrees(asin(SINtriangleAngleA))
+                        triangleAngleA2 = 180 - triangleAngleA1
 
                         triangleAngleC1 = 180 - triangleAngleA1 - triangleAngleB
                         triangleAngleC2 = 180 - triangleAngleA2 - triangleAngleB
 
-                        triangleSquare1 = 0.5 * triangleB * triangleC * sin(radians(triangleAngleC1))
-                        triangleSquare2 = 0.5 * triangleB * triangleC * sin(radians(triangleAngleC2))
+                        triangleSquare1 = (
+                            0.5 * triangleB * triangleC * sin(radians(triangleAngleC1))
+                        )
+                        triangleSquare2 = (
+                            0.5 * triangleB * triangleC * sin(radians(triangleAngleC2))
+                        )
 
-                        print("Area for an acute angle:", triangleSquare1, "\nThe area of an obtuse angle:", triangleSquare2)
-
+                        print(
+                            "Area for an acute angle:",
+                            triangleSquare1,
+                            "\nThe area of an obtuse angle:",
+                            triangleSquare2,
+                        )
 
             elif triangleB == "-":
-                float(sideA) = triangleA
-                float(sideB) = triangleC
+                triangleA = float(triangleA)
+                triangleC = float(triangleC)
 
-                triangleAngleA = input(print('Enter the angle between 2 sides that you know (if you dont know the angle, enter "-" without quotes)')) 
-                triangleAngleB = input(print('Enter the angle opposite the side you know (if you dont know the angle, enter "-" without quotes)'))  
+                triangleAngleA = input(
+                    print(
+                        'Enter the angle between 2 sides that you know (if you dont know the angle, enter "-" without quotes)'
+                    )
+                )
+                triangleAngleB = input(
+                    print(
+                        'Enter the angle opposite the side you know (if you dont know the angle, enter "-" without quotes)'
+                    )
+                )
 
                 if triangleAngleA != "-":
                     triangleAngleA = float(triangleAngleA)
                     triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+
                     print(
-                    "Triangle square:",
-                    triangleSquare,
+                        "Triangle square:",
+                        triangleSquare,
                     )
                 elif triangleAngleB != "-":
-                    SINtriangleAngleA = (triangleB  * sin(triangleAngleB)) / triangleC
+                    SINtriangleAngleA = (triangleB * sin(triangleAngleB)) / triangleC
 
                     if SINtriangleAngleA > 1:
-                        print("The triangle does not exist!")   
+                        print("The triangle does not exist!")
                     elif SINtriangleAngleA == 1:
-                        triangleAngleA = float(triangleAngleA) 
-                        triangleAngleA = 90 # прямоугольный треугольник
+                        triangleAngleA = float(triangleAngleA)
+                        triangleAngleA = 90  # прямоугольный треугольник
 
-                        triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+                        triangleSquare = (
+                            0.5 * triangleB * triangleC * sin(triangleAngleA)
+                        )
+
                         print(
                             "Triangle square:",
                             triangleSquare,
                         )
-                    elif  SINtriangleAngleA < 1:
-                        triangleAngleA1 = degrees(asin(SINtriangleAngleA))  
-                        triangleAngleA2 = 180 - triangleAngleA1  
+                    elif SINtriangleAngleA < 1:
+                        triangleAngleA1 = degrees(asin(SINtriangleAngleA))
+                        triangleAngleA2 = 180 - triangleAngleA1
 
                         triangleAngleC1 = 180 - triangleAngleA1 - triangleAngleB
                         triangleAngleC2 = 180 - triangleAngleA2 - triangleAngleB
 
-                        triangleSquare1 = 0.5 * triangleB * triangleC * sin(radians(triangleAngleC1))
-                        triangleSquare2 = 0.5 * triangleB * triangleC * sin(radians(triangleAngleC2))
+                        triangleSquare1 = (
+                            0.5 * triangleB * triangleC * sin(radians(triangleAngleC1))
+                        )
+                        triangleSquare2 = (
+                            0.5 * triangleB * triangleC * sin(radians(triangleAngleC2))
+                        )
 
-                        print("Area for an acute angle:", triangleSquare1, "\nThe area of an obtuse angle:", triangleSquare2)
-
+                        print(
+                            "Area for an acute angle:",
+                            triangleSquare1,
+                            "\nThe area of an obtuse angle:",
+                            triangleSquare2,
+                        )
 
             elif triangleC == "-":
-                float(sideA) = triangleA
-                float(sideB) = triangleB   
+                triangleA = float(triangleA)
+                triangleB = float(triangleB)
 
-                triangleAngleA = input(print('Enter the angle between 2 sides that you know (if you dont know the angle, enter "-" without quotes)')) 
-                triangleAngleB = input(print('Enter the angle opposite the side you know (if you dont know the angle, enter "-" without quotes)'))  
+                triangleAngleA = input(
+                    print(
+                        'Enter the angle between 2 sides that you know (if you dont know the angle, enter "-" without quotes)'
+                    )
+                )
+                triangleAngleB = input(
+                    print(
+                        'Enter the angle opposite the side you know (if you dont know the angle, enter "-" without quotes)'
+                    )
+                )
 
                 if triangleAngleA != "-":
                     triangleAngleA = float(triangleAngleA)
                     triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+
                     print(
-                    "Triangle square:",
-                    triangleSquare,
+                        "Triangle square:",
+                        triangleSquare,
                     )
                 elif triangleAngleB != "-":
-                    SINtriangleAngleA = (triangleB  * sin(triangleAngleB)) / triangleC
+                    SINtriangleAngleA = (triangleB * sin(triangleAngleB)) / triangleC
 
                     if SINtriangleAngleA > 1:
-                        print("The triangle does not exist!")   
+                        print("The triangle does not exist!")
                     elif SINtriangleAngleA == 1:
-                        triangleAngleA = float(triangleAngleA) 
-                        triangleAngleA = 90 # прямоугольный треугольник
+                        triangleAngleA = float(triangleAngleA)
+                        triangleAngleA = 90  # прямоугольный треугольник
 
-                        triangleSquare = 0.5 * triangleB * triangleC * sin(triangleAngleA)
-                    
+                        triangleSquare = (
+                            0.5 * triangleB * triangleC * sin(triangleAngleA)
+                        )
+
                         print(
                             "Triangle square:",
                             triangleSquare,
                         )
-                    elif  SINtriangleAngleA < 1:
+                    elif SINtriangleAngleA < 1:
 
-                        triangleAngleA1 = degrees(asin(SINtriangleAngleA))  
-                        triangleAngleA2 = 180 - triangleAngleA1  
+                        triangleAngleA1 = degrees(asin(SINtriangleAngleA))
+                        triangleAngleA2 = 180 - triangleAngleA1
 
                         triangleAngleC1 = 180 - triangleAngleA1 - triangleAngleB
                         triangleAngleC2 = 180 - triangleAngleA2 - triangleAngleB
 
-                        triangleSquare1 = 0.5 * triangleB * triangleC * sin(radians(triangleAngleC1))
-                        triangleSquare2 = 0.5 * triangleB * triangleC * sin(radians(triangleAngleC2))
+                        triangleSquare1 = (
+                            0.5 * triangleB * triangleC * sin(radians(triangleAngleC1))
+                        )
+                        triangleSquare2 = (
+                            0.5 * triangleB * triangleC * sin(radians(triangleAngleC2))
+                        )
 
-                        print("Area for an acute angle:", triangleSquare1, "\nThe area of an obtuse angle:", triangleSquare2)
+                        print(
+                            "Area for an acute angle:",
+                            triangleSquare1,
+                            "\nThe area of an obtuse angle:",
+                            triangleSquare2,
+                        )
 
     else:
         print("Sorry, this figure is temporarily unsupported!")
@@ -546,4 +657,3 @@ else:
         "Простите, этот язык не поддерживается",
         sep="",
     )
-
