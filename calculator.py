@@ -368,6 +368,23 @@ elif lang_ch == "ENG" or lang_ch == "eng":
             squareDiagonal,
         )
 
+    elif shape_ch in ("Rhombe, rhombe"):
+        rhombSide1 = float(input(print("Enter 1 rhombe diagonal")))
+        rhombSide2 = float(input(print("Enter 1 rhombe diagonal")))
+
+        rhombSquare = (rhombSide1 * rhombSide2) / 2
+        rhombSide = sqrt(pow(rhombSide1 / 2, 2) + pow(rhombSide2 / 2, 2))
+        rhombHigh = rhombSquare / rhombSide
+
+        print(
+            "Rhombe square:",
+            rhombSquare,
+            "\nRhombe high:",
+            rhombHigh,
+            "\nrhomb side",
+            rhombSide,
+        )
+
     elif shape_ch == "Triangle" or shape_ch == "triangle":
         triangleA = input(
             print(
