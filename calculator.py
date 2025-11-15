@@ -318,7 +318,9 @@ if lang_ch == "RUS" or lang_ch == "rus" or lang_ch == "РУС" or lang_ch == "р
 
 elif lang_ch == "ENG" or lang_ch == "eng":
 
-    shape_ch = input(print("Choose the shape:(Circle, Rectangle, Square, Triangle)"))
+    shape_ch = input(
+        print("Choose the shape:(Circle, Rectangle, Square, Triangle, Rhombe)")
+    )
 
     if shape_ch == "Rectangle" or shape_ch == "rectangle":
 
